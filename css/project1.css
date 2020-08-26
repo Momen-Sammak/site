@@ -1,0 +1,1098 @@
+/*اعمل فهرس */
+ /*general css style*/
+ *{
+     margin: 0;
+     padding: 0;  
+     box-sizing: border-box;
+     
+}
+  
+ a{
+       text-decoration: none;
+ }
+
+ 
+ .pd-y{
+       padding: 120px 0px; 
+ } 
+/***************************************************/   /*دمج التأثيرين مع بعض */
+.ltr-effect,.tp-effect{
+     position: relative;
+}
+
+ .ltr-effect::after,
+ .tp-effect::after  {
+     position: absolute; 
+     content: ""; 
+     /* width: 100%; 
+     height: 100%;   */
+     background-color:#333; 
+     top: 0; 
+     left: 0; 
+     right: 0;   
+     bottom: 0;
+     z-index: -1; 
+} 
+ 
+.ltr-effect::after{
+     width: 0;
+     transition: width .5s;
+}
+
+.tp-effect::after{
+     height: 0;   
+     transition: height .5s;
+
+}
+
+.ltr-effect:hover::after{
+   width: 100%;    
+
+}  
+
+.tp-effect:hover::after{
+   height: 100%;    
+
+}  
+
+/*************************************************************/
+.about-item:hover .about-item-title{
+     color: white;
+}
+
+.padding{
+     padding:0 0 100px 0;
+}
+
+
+ul{
+     list-style-type: none;
+}
+
+:root{
+     --main-color: rgb(90,90,179)
+}
+
+
+body{
+     
+    font-family: Verdana,sans-serif;
+
+} 
+ 
+.container{
+    width: 80%; 
+    /* background-color: red;  */
+    /* position: relative; 
+    left: 50%; 
+    transform: translate(-50%,0);
+     */ 
+
+     margin: auto; 
+}
+
+.header{
+     /* background-color: gray;  */
+     position: fixed; 
+     z-index: 1;   
+     width: 100%;  
+     background-color: rgba(0,0,0,0.4);
+
+}
+.header .logo{   
+    float: left;
+    width: 30%; 
+    /* background-color: salmon; */
+} 
+ 
+.header .logo img{ 
+     width: 30%; 
+     margin-top:15px;
+}
+
+.header .nav{
+     float: left;
+     width: 70%; 
+     /* background-color: skyblue; */
+     text-align: right;
+
+} 
+
+.clear{
+
+    clear: both;  
+} 
+
+.header .nav > li{ 
+    list-style-type: none;
+     display: inline-block;  
+     /* padding: 20px;            مش كويس كتير عشان لما اعص حوالين الكلمة يتحول شكل الماوس وأقدر أضغط  */
+     
+} 
+
+.header .nav > li > a{ 
+    color: white; 
+    text-decoration: none;  
+    padding: 30px 15px;  /*top right*/
+    display: block; 
+    font-size: 18px;   
+    cursor: pointer;
+}
+
+.header .nav> li > a:after{  
+    content: "";
+    display: block; 
+    background-color:  rgb(90, 90, 179);
+    height: 2px; 
+    width: 0;
+       transition: .5s
+
+}  
+
+
+.header .nav > li  .active:after{
+     content: "";
+     display: block; 
+     background-color:  rgb(90, 90, 179);
+     height: 2px; 
+     width: 100%;
+ } 
+ 
+.header .nav > li > a:hover::after{  
+    
+    width: 100%; 
+}  
+  
+.dropdown{
+      position: relative;
+}
+
+.dropdown-menu  {
+      position: absolute;  
+      background-color:  rgb(90, 90, 179);   
+      width: 120px; 
+     list-style: none; 
+     top: 70px;   
+     opacity: 0;
+     visibility: hidden;  
+     /* transition: opacity 2s, visibility 2s; تحت أحسن عشان التأثير ميشتغلش بدون تأشير الماوس*/ 
+
+
+}   
+ 
+.dropdown-menu li a{ 
+     display: block;
+     padding: 15px; 
+     text-decoration: none; 
+     color: white; 
+     text-align: left;  
+
+}
+
+.dropdown:hover .dropdown-menu{  
+     transition: .5s;
+          transition: opacity 1s, visibility 2s; 
+      visibility: visible;  
+      opacity: 1;
+      
+}
+
+/********************************************************************/
+
+/* Home Section*/
+
+ /*لو لقيت كلام على صورة, إذن الصورة هاد محطوطة بال 
+ backgroung-img: url(); */
+ 
+
+.home{
+     height: 100vh;
+     background-image: url(../images/pexels-photo-917494.jpeg);
+     background-position: center; 
+     background-size: cover; 
+     position: relative;
+} 
+
+ 
+.overlay{
+     width: 100%;
+     height: 100%; 
+     position: absolute;  
+     background-color: rgba(0,0,0,0.7);
+}
+
+.home-content{ 
+     position: absolute; 
+     left: 50%; 
+     top:50%;
+     transform: translate(-50%,-50%); 
+     text-align: center;
+     width: 60%; 
+
+} 
+
+.home .title{
+     color: #fff; 
+      font-size: 3rem; 
+      text-transform: uppercase;
+      font-family: mon;
+}
+
+.home .home-desc{
+      color: #fff;
+      margin: 20px 0 20px 20px; 
+      letter-spacing: 1.5px; 
+      line-height: 2;    
+
+
+}
+
+ .btn{
+      min-width: 150px;
+      border-radius: 5px; 
+      border: 0; 
+      cursor: pointer; 
+      padding: 15px; 
+      font-size: 18px;
+      
+    }
+
+  .btn-learn{
+       background-color: rgb(90, 90, 179);    
+       margin-left: 5px; 
+       color: white;
+    
+    } 
+
+    .btn-start{
+         background-color: white; 
+         margin-right: 10px;
+    }
+
+
+    button{
+         font-family: inherit;
+    }
+      
+     .hover-opacity{ 
+         /* transition: .5s; بس هاد بتطبق ع كل اشي جوا الديف اللي حامل هاد الكلاس  */ 
+         transition:opacity .3s;
+     }
+
+    .hover-opacity:hover{
+        opacity: .8; 
+       
+    }
+/* About Section*/
+.section-header{ 
+      text-align: center; 
+
+} 
+.section-header .section-title{ 
+     font-size: 35px; 
+     text-transform: capitalize; 
+     margin-bottom: 10px; 
+     padding: 0 auto 70px auto  ;   
+
+}
+
+.section-header .line{
+      display: block; 
+      background-color: rgb(90, 90, 179); 
+      height: 3px; 
+      width: 90px; 
+      margin: auto;   
+}
+
+  
+.about-item{
+ float: left;  
+ width: 30%;    
+ text-align:center; 
+ border: 1px solid #e8e8e8; 
+ padding: 50px 20px;
+    
+ }  
+
+
+  .about-item.mg{   /* معناه انه عنصر واحد ماخد كل الكلاسات هاد  */
+     margin:0px 5% ;
+
+  } 
+   
+  .about-content{
+        margin-top: 70px;
+  } 
+
+  .about-item .icon{
+        color:  rgb(90, 90, 179);  
+        margin-bottom: 10px;
+  } 
+
+  .about .about-item-title{
+        text-transform: capitalize; 
+        margin-bottom:10px; 
+        transition: color .5s;
+  } 
+
+  .about .about-item-desc{
+       line-height: 1.6; 
+       color: gray;
+  }
+ 
+  .about-item-link{
+        color: rgb(90, 90, 179) ; 
+        text-transform: capitalize;
+  }
+
+
+  /*************************************************************/
+  
+/* portfolio Section*/
+
+.portfolio{
+     background-color: #f9f9f9; 
+}
+
+.portfolio{
+      /* position: relative; */
+      overflow: hidden;
+}
+
+.portfolio-item{  
+     width: 32%;
+     float: left;   
+     margin-bottom: 60px;   
+     position: relative; 
+     padding: 20px;
+} 
+
+.portfolio-item img{
+      width: 100%;
+}
+
+.portfolio-item.mg{
+      margin:0 2%;
+}
+ 
+
+.portfolio-item .layer-content{
+      position: absolute; 
+      left: 0; 
+      right: 0;  
+       top: 0;
+      bottom: 0;   
+       width: 100%;  
+      height: 100%; 
+      background-color: rgba(0, 0, 0,.5);  
+         visibility: hidden;
+      opacity: 0;    
+  
+       transition: opacity .5;
+
+} 
+
+.portfolio-item:hover .layer-content{ 
+      opacity: 1; 
+      visibility: visible;
+     
+}
+ 
+.layer-content .layer-info{
+      position: absolute;  /*بنفع, وبهاد الحالة بيتحرك بالنسبة للابسوليوت اللي فوقه */ 
+      text-align: center; 
+      top: 50%; 
+      left: 50%; 
+      transform: translate(-50%,-50%);
+
+} 
+ 
+.layer-content .category{
+     text-transform: uppercase; 
+     color:rgb(90, 90, 179) ;  
+     display: block;
+     margin-bottom: 5px;  
+     position: relative; 
+     top: 10px;    
+     transition: top .5s;
+     transition-delay: .2s  opacity .5;
+     opacity: 0;
+}  
+
+.layer-content .layer-content-title{
+      text-transform: capitalize; 
+      font-size: 30px; 
+      margin-bottom: 10px; 
+      color: #fff; 
+      position: relative; 
+      top: 10px; 
+      transition: top .5s;
+      transition-delay: .3s  opacity .5;
+
+     opacity: 0;
+}.layer-content .layer-info a{
+  color: #fff;
+  position: relative; 
+      top: 10px;
+      transition: top .5s;
+      transition-delay: .3s  opacity .5;
+      
+ 
+     opacity: 0;
+   
+} 
+
+.layer-content .layer-info a i{
+     
+    background-color:rgb(90, 90, 179) ;  
+   width: 40px; 
+     height: 40px; 
+        display: inline-block;
+      line-height: 40px; 
+    
+} 
+
+.portfolio-item:hover .layer-content-title,  
+.portfolio-item:hover a, 
+.portfolio-item:hover .category
+{
+     transition: .5s;
+      top: 0; 
+      opacity: 1;
+}
+
+/*********************************************************/
+
+/* offer Section*/ 
+
+.offer{
+
+}
+
+.offer-content{
+     overflow: hidden;  
+}
+
+
+.offer-item{ 
+     width: 30%;
+     float: left;  
+     margin: 20px 0; 
+     border: 1px solid #e8e8e8; 
+     padding: 20px 15px 30px 70px; 
+     position: relative;
+}
+
+
+
+.offer-item.mg{
+     margin-right: 5%; 
+     margin-left: 5%; 
+    
+}
+.offer-item .icon{
+      position: absolute; 
+      left: 15px; 
+      top: 30px;
+      color: rgb(90, 90, 179);
+}
+
+.offer-item-title{
+     text-transform: capitalize;
+     margin-bottom: 15px; 
+     transition: .5s;
+} 
+
+.offer-item-desc{
+     text-transform: capitalize;
+     margin-bottom: 15px; 
+     line-height: 1.6;
+     color: #999;
+}
+
+.offer-item:hover .offer-item-title{
+     color: white;
+}
+
+
+/*************************************************************************/
+/**service section*/
+
+.service{
+background-color: #f9f9f9;
+}
+ 
+.service-item{
+     width: 50%;
+      float: left;
+}
+
+.service-item .section-header{
+     text-align: left;
+} 
+
+.service-item .section-header span{
+     display: block; 
+margin: 0 0 70px 0 ;
+} 
+
+.service-item-desc{ 
+      padding-right: 20px; 
+      color: #999;  
+      line-height: 1.4;
+      font-size: 17px; 
+      margin-bottom:20px ;
+
+}
+ 
+.service-list{
+     list-style: none;
+}
+.service-list li{
+     margin-bottom: 5px;
+     color: #999;
+
+}
+.service-list li i{
+     border: 1px solid rgb(90, 90, 179); 
+     color:rgb(90, 90, 179);
+     width: 30x;
+     height: 30px;
+     padding: 5px;
+     border-radius: 50%;   
+}
+ 
+.service-item img{
+     width: 100%;  
+
+} 
+ 
+ .service-bollets{ 
+     list-style-type: none;  
+     text-align: center;
+
+
+ }
+
+.service-bollets li{
+     height: 10px;  
+      width: 10px;
+      display: inline-block; 
+      background-color: #e8e8e8;  
+      margin: 10px 5px; 
+      border-radius: 50%; 
+
+}
+
+.service-bollets li.active{ 
+      background-color: rgb(90, 90, 179) ;
+}
+
+.service-bollets li:hover{
+     background-color: rgb(90, 90, 179) ;
+
+}
+  
+ /************************************************************/
+ /*Numbers Section*/ 
+
+ .numbers{
+      position: relative;  
+      background-image: url(../images/background/background2.webp);
+      height: 50%;
+      background-size: cover;  
+      background-attachment: fixed;
+      
+ }
+ 
+  
+ .numbers-items{  
+       overflow: hidden; 
+       margin: 100px 0;
+     
+
+
+
+ }
+
+  .number-item{
+       width: 25%;
+       float: left;  
+       text-align: center;
+  }
+
+.numbers .icon{
+      color: rgb(90, 90, 179); 
+      margin-bottom: 15px;
+
+}
+ .number-item-title{
+      font-size: 25px;
+      font-style:bold; 
+      margin: 15px;   
+      color: white;
+ }
+
+.number-item-text{
+      color: white;
+}
+
+/* prices Section*/
+
+.pricing{
+
+}
+
+.pricing-plans{
+     overflow: hidden;
+}
+
+.pricing-item{
+     width: 30%; 
+     float: left;
+     padding: 40px 15px; 
+     border: 1px solid #e8e8e8 ;
+     text-align: center;
+
+}
+
+.pricing-item.mg{
+     margin: 0 5%;
+}
+
+.pricing-item-text{
+
+     text-transform: uppercase;
+     font-size: 17px; 
+     color: #999; 
+     transition: color .5s;
+}
+
+.pricing-per-month{ 
+     width: 130px;     
+     height: 130px;
+     margin:20px auto; 
+     padding: 20px 0; 
+     border: 1px solid rgb(90, 90, 179); 
+     border-radius: 50%;
+}
+ 
+.pricing-per-month .dollar {
+     font-size: 50px;    
+     
+     transition: color .5s;
+
+
+
+}
+
+.pricing-per-month .month {
+      font-size: 15x; 
+      font-weight: bold;
+      text-transform: uppercase;
+      transition:  color .5s;
+
+}
+
+
+.pricing-list{
+     list-style: none;
+      
+}
+
+.pricing-list li{
+      color: #999;
+}
+
+
+.pricing-item-purchase{
+     background-color: none; 
+     border: 0; 
+     display: block; 
+     width: 140px;
+     padding: 10px; 
+     margin: 15px auto 0 auto; 
+     color:rgb(90, 90, 179) ; 
+     border: 2px solid rgb(90, 90, 179);
+     cursor: pointer;
+}
+
+
+.pricing-item:hover .pricing-per-month{  
+     color: white; 
+
+}
+ 
+.pricing-item:hover .pricing-item-text{
+     color: rgb(90, 90, 179);
+}
+
+/***************************************************/
+/*Testimonial Section*/ 
+
+.testimonial{
+     position: relative;
+     background-image: url(../images/background/background3.webp); 
+     background-attachment: fixed ;
+     height: 400px; 
+          background-size: cover;
+
+}
+
+.testimonial-content{
+     overflow: hidden;   
+     padding: 120px 0; 
+     width: 80%; 
+     margin: auto;
+
+} 
+ 
+.testimonial-item{
+     width: 50%; 
+     float: left; 
+     color: #fff;
+}
+
+.testimonial-toplayer{
+     padding: 10px 2px 40px 100px; 
+     position: relative;
+}
+
+.testimonial-toplayer img{
+     position: absolute; 
+     left: 10px; 
+     top: 5px;
+     border-radius: 50%;
+}
+
+
+.testimonial-toplayer h3{
+      margin-bottom: 20px;
+} 
+
+.testimonial-toplayer span{
+     color: rgb(90, 90, 179);
+}
+ 
+.testimonial-desc{
+     line-height: 1.5; 
+     font-size:17px ;
+}
+/****************************************************/
+/* team Section*/
+.team-content{
+     overflow: hidden;
+}
+ 
+.team-item{ 
+     width: 30%;
+     float: left;
+     background-color: #e8e8e8; 
+     padding: 20px 40px;
+     text-align: center;
+}
+
+.team-item .team-img{
+      width: 90%; 
+      margin: auto; 
+      position: relative; 
+      margin-top:5px ;
+}
+ 
+.team-item .team-img img{
+     width: 100%; 
+}
+
+
+.team-item .team-overlay a i{ 
+     margin-top: 10px;
+}
+
+
+.team-item .team-info-title{ 
+     color: #222; 
+     text-transform: capitalize; 
+     margin: 10px 0 ;
+} 
+ 
+.team-item .team-info-text{
+     color: #999; 
+     text-transform: uppercase; 
+     font-size: 14px;
+}
+.team-item .team-info{
+} 
+ 
+ .team-overlay{
+      position: absolute;
+      top: 0; 
+      bottom: 0; 
+      left: 0; 
+      right: 0;  
+      background-color: rgba(0,0,0,0.5);
+      opacity: 0; 
+      visibility: hidden; 
+
+ }
+  
+ .team-overlay a{ 
+      display: block; 
+      width: 40px; 
+      height: 40px; 
+      background-color: rgb(90, 90, 179);
+      color: white;
+      margin-left:auto ;
+ }
+
+ .team-item:hover .team-overlay{
+      opacity: 1; 
+      visibility: visible;
+ } 
+ .team-item.tp-effect{
+      z-index: 1;
+ }  
+  
+ .team-item:hover .team-info-title{ 
+      color: #fff;
+      transition: color .5s;
+
+ } 
+
+ .team-item:hover .team-info-text{ 
+     color: rgb(90, 90, 179);
+     transition: color .5s;
+
+} 
+  
+.team-item.mg{
+      margin: 0 5%;
+}
+ 
+/* Blog Section*/
+
+.blog{ 
+     background-color: #f8f8f8;
+}
+ 
+ .blog-content{
+      overflow: hidden; 
+ }
+
+ .blog-item{
+       width: 30%; 
+       float: left; 
+       background-color: #fff;
+ } 
+  
+ 
+
+ .blog-item-img img{
+      width: 100%; 
+
+ }
+ 
+ .blog-list{
+      list-style: none;   
+     margin: 10px 0; 
+
+ } 
+
+  .blog-list li{
+       display: inline-block;
+       margin: 0 5px;
+  } 
+   
+  .blog-info{
+        padding: 25px 30px;
+  }
+
+  .blog-list li i{
+       color:rgb(90, 90, 179);
+  } 
+   
+  .blog-title{
+     margin: 20px 0 ;    
+     font-weight: bold;
+  }  
+   
+  .blog-desc{
+       line-height: 1.5; 
+       color: #999; 
+       margin-bottom: 10px;
+  }
+
+  .blog-item .blog-info link{
+        color: rgb(90, 90, 179);
+  }  
+   
+  .blog-item.mg{
+       margin: 0 5%;
+       }
+   
+/***************************************************************/
+/* contact Section*/ 
+  .contact{
+        
+  }
+ 
+  .contact-content{
+       overflow: hidden;  
+       padding-bottom: 50px;
+
+  }
+ .contact-item{
+      width: 30%; 
+      float: left; 
+      text-align: center;  
+      
+
+ }
+  
+ .contact-item.mg{
+      margin: 0 5%;
+ }
+
+ .contact-item i{
+       color: rgb(90, 90, 179);
+ }
+ 
+ .contact-item tilte{
+      font-size: 18px; 
+      text-transform: capitalize;
+ }
+ 
+ 
+ .contact form{
+       text-align: center;
+ }
+ 
+  .input-area{
+       width: 50%; 
+       margin: auto;
+  } 
+
+  .contant form{ 
+       width: 100%; 
+
+    }
+.contact input.subject{
+     display: block; 
+     margin-bottom: 15px;
+     width: 100%; 
+     height: 40px; 
+padding: 5px 0;}
+ 
+.contact textarea{ 
+     margin-bottom: 15px;
+     width: 100%;
+}  
+ 
+.contact button{
+     display: block;
+     width: 30%; 
+     height: 40px;
+     margin: auto;
+     cursor: pointer;  
+     background-color: rgb(90, 90, 179);  
+     border: 0; 
+     border-radius: 10px; 
+     transition: opacity .5s;
+}
+
+ 
+.contact button:hover{
+     opacity:.5;
+} 
+ 
+
+.text-pp{ 
+      width: 100%;  
+      overflow: hidden;
+
+}
+   .contact input,.contact textarea{
+        border: 0; 
+        background-color: #f4f4f4; 
+        border-bottom: 1px solid rgb(90, 90, 179);
+   }
+
+ .text-pp .text{
+      width: 49%; 
+      float: left; 
+ } 
+
+ .text input{
+      width: 100%; 
+      margin-bottom:15px;
+      height: 40px; 
+
+ }
+
+.text-pp .text.oo{
+margin-right:2% ; 
+
+ }
+form{ 
+     display: block;
+     width: 100%; 
+     margin: auto;
+     overflow: hidden;
+}
+ 
+
+
+
+
+
+
+ /*Footer Section*/ 
+  
+ .footer{
+      background-color: #1c1d23;
+      text-align: center; 
+      padding: 60px 0 ;
+ } 
+ 
+  
+
+ .footer-links{
+ 
+     list-style-type:none; 
+     margin: 20px 0; 
+
+ }
+
+ .footer-links li{
+      display: inline-block;  
+      
+
+ }
+  
+ .footer-links li a{
+       
+     display: block; 
+     height: 50px; 
+     width: 50px; 
+     color: #fff; 
+     background-color: rgb(90, 90, 179);
+     margin: 0 5px; 
+     border: 0;
+     border-radius: 50%;
+ } 
+
+.footer-links li i{
+     line-height: 50px;
+} 
+ 
+.links-hover:hover{ 
+     opacity: .7;
+
+} 
+ 
+.footer .copy-right{
+     color: #999;
+     font-size: 15px;  
+     text-transform: uppercase;
+     
+
+}
